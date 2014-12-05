@@ -7,5 +7,6 @@ namespace ArabamNeYakar.Entities
 {
     public class ArabamNeYakarContext
     {
+        //selamlar
     }
 }
