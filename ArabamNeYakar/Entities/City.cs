@@ -5,11 +5,23 @@ using System.Web;
 
 namespace ArabamNeYakar.Entities
 {
-    public class City
+    public partial class City
     {
-        public int ID { get; set; }
+        public City()
+        {
+            this.fuelrates = new HashSet<FuelRate>();
+        }
+    
+        public int id { get; set; }
+        public Nullable<int> country_id { get; set; }
+        public string code { get; set; }
         public string name { get; set; }
-        public int plateCode { get; set; }
-        //public ICollection<Distinct> distincts { get; set; }
+        public short version { get; set; }
+        public Nullable<System.DateTime> updateDate { get; set; }
+        public string updateUserName { get; set; }
+        public Nullable<short> status { get; set; }
+    
+        public virtual ICollection<FuelRate> fuelrates { get; set; }
+        public virtual Country countries { get; set; }
     }
 }

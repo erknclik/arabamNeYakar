@@ -5,9 +5,22 @@ using System.Web;
 
 namespace ArabamNeYakar.Entities
 {
-    public class HatchType
+    public partial class HatchType
     {
-        public int ID { get; set; }
+        public HatchType()
+        {
+            this.carmodels = new HashSet<CarModel>();
+            this.cars = new HashSet<Car>();
+        }
+    
+        public int id { get; set; }
         public string name { get; set; }
+        public short version { get; set; }
+        public Nullable<System.DateTime> updateDate { get; set; }
+        public string updateUserName { get; set; }
+        public Nullable<short> status { get; set; }
+    
+        public virtual ICollection<CarModel> carmodels { get; set; }
+        public virtual ICollection<Car> cars { get; set; }
     }
 }

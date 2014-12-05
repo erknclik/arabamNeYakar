@@ -5,17 +5,28 @@ using System.Web;
 
 namespace ArabamNeYakar.Entities
 {
-    public class Car
+    public partial class Car
     {
-        public int ID { get; set; }
-        public CarModel carModel { get; set; }
-        public HatchType hatchType { get; set; }
-        public FuelType fuelType { get; set; }
-        public string gear { get; set; }
-        public ICollection<string> comments { get; set; }
-
-        public CatalogueInfo catalogueInfo { get; set; }
-
+        public Car()
+        {
+            this.carcomments = new HashSet<CarComment>();
+        }
+    
+        public int id { get; set; }
+        public Nullable<int> model_id { get; set; }
+        public Nullable<int> hatchtype_id { get; set; }
+        public Nullable<int> fueltype_id { get; set; }
+        public Nullable<int> catalogueinfo_id { get; set; }
+        public short version { get; set; }
+        public Nullable<System.DateTime> updateDate { get; set; }
+        public string updateUserName { get; set; }
+        public Nullable<short> status { get; set; }
+    
+        public virtual ICollection<CarComment> carcomments { get; set; }
+        public virtual CarModel carmodels { get; set; }
+        public virtual CatalogueInfo catalogueinfos { get; set; }
+        public virtual HatchType hatchtypes { get; set; }
+        public virtual FuelType fueltypes { get; set; }
 
     }
 }
