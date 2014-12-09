@@ -125,6 +125,7 @@
   <ItemGroup>
     <Compile Include="ArabamNeYakarContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogOnController.cs" />
     <Compile Include="Entities\Brand.cs" />
     <Compile Include="Entities\Car.cs" />
     <Compile Include="Entities\CarComment.cs" />
@@ -175,9 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Layout.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Home\deneme.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
