@@ -1,0 +1,45 @@
+﻿@model ArabamNeYakar.Entities.User
+
+@{
+    ViewBag.Title = "Kullanıcı Kaydı";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    
+        <legend>User</legend>
+
+        <div class="editor-label">
+            Kullanıcı Adı :
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.userName)
+            @Html.ValidationMessageFor(model => model.userName)
+        </div>
+
+        <div class="editor-label">
+            Şifre :
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.password)
+            @Html.ValidationMessageFor(model => model.password)
+        </div>
+
+        <div class="editor-label">
+            E-mail :
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.email)
+            @Html.ValidationMessageFor(model => model.email)
+        </div>
+        <p>
+            <input type="submit" value="Oluştur" />
+        </p>
+
+}
+

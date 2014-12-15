@@ -125,6 +125,7 @@
   <ItemGroup>
     <Compile Include="ArabamNeYakarContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Controllers\LogOnController.cs" />
     <Compile Include="Entities\Brand.cs" />
     <Compile Include="Entities\Car.cs" />
@@ -176,6 +177,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LogOn\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LogIn\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

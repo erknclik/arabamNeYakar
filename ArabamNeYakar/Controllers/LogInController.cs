@@ -7,26 +7,25 @@ using System.Web.Mvc;
 
 namespace ArabamNeYakar.Controllers
 {
-    public class LogOnController : Controller
+    public class LogInController : Controller
     {
         //
-        // GET: /LogOn/
+        // GET: /LogIn/
 
         public ActionResult Index()
         {
             return View();
         }
+        
         [HttpPost]
         public ActionResult Index(User user)
         {
-
             ArabamNeYakarContext db = new ArabamNeYakarContext();
-            if (ModelState.IsValid)
+
+            var sonuc = db.users.Where(q => q.userName == user.userName && q.password == user.password);
+            if (sonuc.Count()>0)
             {
-                user.passive = true;
-                user.status = 1;
-                db.users.Add(user);
-                db.SaveChanges();
+                Session["KullaniciBilgileri"] = (User)sonuc.SingleOrDefault();
                 return RedirectToAction("Index", "Home");
             }
             return View(user);

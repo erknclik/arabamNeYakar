@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -14,10 +15,13 @@ namespace ArabamNeYakar.Entities
         }
     
         public int id { get; set; }
+        [Required]
         public string userName { get; set; }
+        [Required]
         public string password { get; set; }
         public Nullable<bool> passive { get; set; }
         public Nullable<System.DateTime> lastLogin { get; set; }
+        [Required]
         public string email { get; set; }
         public short version { get; set; }
         public Nullable<System.DateTime> updateDate { get; set; }
