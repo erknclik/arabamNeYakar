@@ -11,7 +11,8 @@ namespace ArabamNeYakar.Entities
        public User()
         {
             this.carcomments = new HashSet<CarComment>();
-            this.userroles = new HashSet<UserRole>();
+                    
+           //this.userroles = new HashSet<UserRole>();
         }
     
         public int id { get; set; }
@@ -27,9 +28,12 @@ namespace ArabamNeYakar.Entities
         public Nullable<System.DateTime> updateDate { get; set; }
         public string updateUserName { get; set; }
         public Nullable<short> status { get; set; }
+        public int RoleID { get; set; }
+        public virtual Role Role { get; set; }
+
     
         public virtual ICollection<CarComment> carcomments { get; set; }
-        public virtual ICollection<UserRole> userroles { get; set; }
+        //public virtual ICollection<UserRole> userroles { get; set; }
 
 
     }

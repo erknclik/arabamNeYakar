@@ -9,7 +9,7 @@ namespace ArabamNeYakar.Entities
     {
         public Role()
         {
-            this.userroles = new HashSet<UserRole>();
+           // this.userroles = new HashSet<UserRole>();
         }
     
         public int id { get; set; }
@@ -20,6 +20,6 @@ namespace ArabamNeYakar.Entities
         public string updateUserName { get; set; }
         public Nullable<short> status { get; set; }
     
-        public virtual ICollection<UserRole> userroles { get; set; }
+        //public virtual ICollection<UserRole> userroles { get; set; }
     }
 }

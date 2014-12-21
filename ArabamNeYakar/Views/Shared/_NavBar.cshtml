@@ -1,14 +1,14 @@
 ﻿
 
-<nav>
+<nav class="UstMenu">
     <a href="#">Ana Sayfa</a>
 
     
     @if (Session["KullaniciBilgileri"] != null)
     {
-        if (((ArabamNeYakar.Entities.User)Session["KullaniciBilgileri"]).userroles.SingleOrDefault(q => q.users.id == ((ArabamNeYakar.Entities.User)Session["KullaniciBilgileri"]).id).roles.id == 1)
+        if (((ArabamNeYakar.Entities.User)Session["KullaniciBilgileri"]).RoleID == 1)
         {
-            <a href="@Url.Action("Index", "Giris", new { AreaName="Admin"})">Admin Paneli</a>
+            <a href="@Url.Action("Index", "Admin")">Admin Paneli</a>
             <a href="#">User</a>
         }
         <a href="#">Dashboard</a>

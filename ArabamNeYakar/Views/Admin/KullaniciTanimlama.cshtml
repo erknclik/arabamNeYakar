@@ -1,0 +1,51 @@
+﻿@model ArabamNeYakar.Entities.User
+
+@{
+    ViewBag.Title = "Kullanıcı Tanımlama";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>KullaniciTanimlama</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+  
+        <legend>Kullanıcı Tanımı</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.userName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.userName)
+            @Html.ValidationMessageFor(model => model.userName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.password)
+        </div>
+        <div class="editor-field">
+            @Html.PasswordFor(model => model.password)
+            @Html.ValidationMessageFor(model => model.password)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.email)
+            @Html.ValidationMessageFor(model => model.email)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RoleID)
+        </div>
+        <div class="editor-field">
+            
+            @Html.DropDownListFor(model => model.RoleID, new SelectList(ViewBag.Roles, "id", "name"), "Seçiniz")
+            @Html.ValidationMessageFor(model => model.RoleID)
+        </div>
+        <p>
+            <input type="submit" value="Oluştur" />
+        </p>
+   
+}

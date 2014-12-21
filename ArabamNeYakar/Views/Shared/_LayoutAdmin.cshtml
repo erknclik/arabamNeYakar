@@ -1,6 +1,7 @@
 ﻿@{
     Layout = null;
 }
+
 <!doctype html>
 <html>
 <head>
@@ -14,15 +15,30 @@
 </head>
 <body>
     <header>
-        <h1>MVC ÇALIŞMAMIZ</h1>
+        <h1>Admin Paneli</h1>
     </header>
     @Html.Partial("_NavBar")
     
+  
 
-    <section id="content">
-        @RenderBody()
+    <section class="AdminContent">
+        <nav class="YanMenu">
+            <ul>
+                <li><a href="@Url.Action("KullaniciTanimlama","Admin")">Kullanıcı Tanımlama</a></li>
+                <li><a href="#">deneme</a></li>
+                <li><a href="#">deneme</a></li>
+                <li><a href="#">deneme</a></li>
+                <li><a href="#">deneme</a></li>
+                <li><a href="#">deneme</a></li>
+
+            </ul>
+        </nav>
+        <div class="ContentAdmin">
+            @RenderBody()
+        </div>
+        <div style="clear:both;"></div>
     </section>
-
+     
     <footer>
         (C) Footer
     </footer>

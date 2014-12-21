@@ -12,7 +12,7 @@ header {
     border-top-right-radius: 10px;
 }
 
-nav
+.UstMenu
 {
     padding: 10px;
     background: #12407f;
@@ -35,7 +35,7 @@ footer {
 }
 
 /* Links */
-nav a {
+.UstMenu a {
     color: #fff;
     background: #436fac;
     padding: 4px 15px;
@@ -44,7 +44,7 @@ nav a {
     font-weight: bolder;
 }
 
-nav a:hover {
+.UstMenu a:hover {
     background: #4d8add
 }
 
@@ -75,6 +75,34 @@ form input[type=submit]:hover {
 }
 
 
+.YanMenu
+{
+    padding: 10px;
+    background: #fff;
+    color: #fff;
+    width:200px;
+    float:left;
+
+}
+.YanMenu ul,.YanMenu li
+{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+}
+.AdminSolMenulu{
+
+}
+.AdminContent{
+     background: #fff;
+}
+.ContentAdmin{
+    width:400px;
+    float:left;
+    padding:20px;
+
+}
 form br {clear: left;}
 
 

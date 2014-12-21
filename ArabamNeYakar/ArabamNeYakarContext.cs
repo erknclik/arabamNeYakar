@@ -31,7 +31,7 @@ namespace ArabamNeYakar
         public DbSet<Picture> pictures { get; set; }
         public DbSet<Role> roles { get; set; }
         public DbSet<User> users { get; set; }
-        public DbSet<UserRole> userRoles { get; set; }
+        //public DbSet<UserRole> userRoles { get; set; }
 
 
     }
