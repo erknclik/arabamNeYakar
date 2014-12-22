@@ -4,10 +4,35 @@
     ViewBag.Title = "Kullanıcı Tanımlama";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#kullaniciKayit").submit(function () {
+            $.ajax({
+                url: "Home/SubmitInfo",
+                type: 'post',
+                data: formContainer.serialize(),
+                success: function (data) {
+                    if (data.IsSuccess) {
+
+                        // Clear the input tags
+                        formContainer.find("input[type='text']").each(function (i, element) {
+                            $(this).val('');
+
+                        });
+
+                    }
+                    alert(data.Message);
+
+                }
+            });
+        });
+    });
+</script>
 
 <h2>KullaniciTanimlama</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm(null, null, FormMethod.Post, new {id = "kullaniciKayit" }))
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
